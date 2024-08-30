@@ -102,7 +102,14 @@ e.g.
 ## 4. Modeling
 
 - ref: https://dimensionstp.github.io/competition/upstage_NLP_competition/#modeling-method
-- 
+- ref:
+- 가설1: 더 강력한 t5 모델인 t5-large 기반 사전 학습 모델을 사용하면 성능이 향상될 것
+    Model: lcw99/t5-large-korean-text-summary
+    encoder_max_len: 1000
+    decoder_max_len: 200
+    generation_max_length: 200
+    per_device_train_batch_size: 1
+    -> 점수 상승, LB: 43.7724
 
 ## 5. Result
 
