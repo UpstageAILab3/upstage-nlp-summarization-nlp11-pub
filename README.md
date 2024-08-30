@@ -103,13 +103,18 @@ e.g.
 
 - ref: https://dimensionstp.github.io/competition/upstage_NLP_competition/#modeling-method
 - ref:
+- 가설1: 대회의 DialogSum Dataset은 Solar로 영한 번역한 버젼이어서 summary 역시 어색한 말투임. 이 상태로 모델 진행해도 성능향상이 힘들다고 판단. Solar로 한영 back-translation을 진행함. 영어로 모델 추론 후, Solar로 한글로 번역한 것을 제출하는 전략을 취함.
+    - train: 100 row per 1 batch로 9분 소요, 총 시간 소요, 과금
+    - dev:
+    - test:
+- 가설2: 
 - 가설1: 더 강력한 t5 모델인 t5-large 기반 사전 학습 모델을 사용하면 성능이 향상될 것
-    Model: lcw99/t5-large-korean-text-summary
-    encoder_max_len: 1000
-    decoder_max_len: 200
-    generation_max_length: 200
-    per_device_train_batch_size: 1
-    -> 점수 상승, LB: 43.7724
+    - Model: lcw99/t5-large-korean-text-summary
+    - encoder_max_len: 1000
+    - decoder_max_len: 200
+    - generation_max_length: 200
+    - per_device_train_batch_size: 1
+    - LB: 43.7724
 
 ## 5. Result
 
