@@ -103,18 +103,16 @@ e.g.
 
 - ref: https://dimensionstp.github.io/competition/upstage_NLP_competition/#modeling-method
 - ref:
-- 가설1: 대회의 DialogSum Dataset은 Solar로 영한 번역한 버젼이어서 summary 역시 어색한 말투임. 이 상태로 모델 진행해도 성능향상이 힘들다고 판단. Solar로 한영 back-translation을 진행함. 영어로 모델 추론 후, Solar로 한글로 번역한 것을 제출하는 전략을 취함.
-    - train: 100 row per 1 batch로 9분 소요, 총 시간 소요, 과금
-    - dev:
-    - test:
-- 가설2: 
-- 가설1: 더 강력한 t5 모델인 t5-large 기반 사전 학습 모델을 사용하면 성능이 향상될 것
-    - Model: lcw99/t5-large-korean-text-summary
-    - encoder_max_len: 1000
-    - decoder_max_len: 200
-    - generation_max_length: 200
-    - per_device_train_batch_size: 1
-    - LB: 43.7724
+- 가설1: 대회의 DialogSum Dataset은 Solar로 영한 번역한 버젼이어서 summary 역시 어색한 말투임. 이 상태로 모델 진행해도 성능향상이 힘들다고 판단. Solar로 한영 back-translation을 진행함. 한,영 같이 모델 학습 후 영어로 추론하여, Solar로 영어를 한글로 번역한 것을 제출하는 전략을 취하고자 함.
+    - train, dev, test -> solar로 영어번역 진행: 100 row per 1 batch로 xlsx파일 생성, 9분 소요, 총 시간 이틀 소요, 과금 $10 이내.
+- 가설2: 빅데이터를 학습한 최신 instruct 모델일수록 성능이 좋을 것이다.
+- 가설3: 이미 광범위한 어휘를 학습한 모델이므로 일반적인 채팅내용의 단어를 추가하여 학습하는 것은 불필요하며 기술적으로도 구현하기 복잡하다.- 
+    - Model: Meta-Llama-3.1-8B-Instruct
+    - encoder_max_len: 1000 max4071, mean620
+    - decoder_max_len: 200 max960, mean143의 중간	
+    - generation_max_length: 150, Summary텍스트길이는 Dialogue텍스트길이와 0.85, dialogue_turns와 0.54 상관관계 가짐. 인위적인 조정보다 모델에 맡기는게 나을 것이다.
+    - per_device_train_batch_size: 32 일반적으로 32부터 셋팅한다.
+    - LB: 
 
 ## 5. Result
 
