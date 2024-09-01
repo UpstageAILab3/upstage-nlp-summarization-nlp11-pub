@@ -64,6 +64,9 @@ e.g.
 - 이번 대회에 사용된 데이터는 모두 대화문 데이터이며 train data, validation data, test data는 각각 12,457개, 499개, 499개 입니다. 각각의 대화문은 최소 2명에서 최대 7명의 화자가 등장하며, 최소 2턴에서 최대 60턴까지 대화가 이어집니다.
 - 대화문에서 발화자는 #Person"N"#으로 구분되어있습니다. 대화문에 존재하는 개인정보(예: 전화번호, 주소 등)는 다음과 같이 마스킹되어 있습니다. 예) 전화번호 -> #PhoneNumber#
 - 대회 데이터셋: DialogSum Dataset: CC BY-NC-SA 4.0 license 단, 해당 데이터을 한국어로 번역하여 활용 원본: https://github.com/cylnlp/dialogsum
+- train : 12457
+- dev : 499
+- test : 499 (250, hidden-test : 249)
 
 ### Evaluation Metric
 
