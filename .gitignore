@@ -1,6 +1,7 @@
 /data
 /prediction
 /wandb
+/model
 *.yaml
 
 # Byte-compiled / optimized / DLL files
