@@ -109,7 +109,30 @@ e.g.
 - 가설1: 대회의 DialogSum Dataset은 Solar로 영한 번역한 버젼이어서 summary 역시 어색한 말투임. 이 상태로 모델 진행해도 성능향상이 힘들다고 판단. Solar로 한영 back-translation을 진행함. 한,영 같이 모델 학습 후 영어로 추론하여, Solar로 영어를 한글로 번역한 것을 제출하는 전략을 취하고자 함.
     - train, dev, test -> solar로 영어번역 진행: 100 row per 1 batch로 xlsx파일 생성, 9분 소요, 총 시간 이틀 소요, 과금 $10 이내.
 - 가설2: 빅데이터를 학습한 최신 instruct 모델일수록 성능이 좋을 것이다.
-- 가설3: 이미 광범위한 어휘를 학습한 모델이므로 일반적인 채팅내용의 단어를 추가하여 학습하는 것은 불필요하며 기술적으로도 구현하기 복잡하다.- 
+- 가설3: 이미 광범위한 어휘를 학습한 모델이므로 일반적인 채팅내용의 단어를 추가하여 학습하는 것은 불필요하며 기술적으로도 구현하기 복잡하다.-
+    - Model: Flan-t5-large
+   
+    - GOLDEN:
+    Mr. Smith is having a physical exam, and Dr. Hawkins recommends that he have a physical exam every year. Dr. Hawkins will give Mr. Smith information about classes and medications that can help him quit smoking.
+
+    - DECODED SENTENCE:
+        - instrunction = ["Summarize. : " + sentence]
+        Dr. Hawkins advises Mr. Smith to have a checkup every year.
+        - instrunction = ["Please provide a detailed summary of the conversation, including all key points and important information. : " + sentence]    
+        Mr. Smith hasn't had a checkup in five years. He should have one every year. Dr. Hawkins advises him to quit smoking.
+
+    
+
+    - GOLDEN:
+    #Person1# asks #Person2# for a favor. #Person2# agrees and buys a small bag of sugar, six oranges, and a half-gallon of milk.
+
+    - DECODED SENTENCE:
+    Orient will go to the store and buy sugar, four oranges and a half gallon of milk.
+    - instrunction = ["The summary should capture all important information, similar to the following format:\n"
+    "Example: #Person1# asks #Person2# for a favor. #Person2# agrees and buys a small bag of sugar, six oranges, and a half-gallon of milk. : " + sentence]    
+
+    
+
     - Model: Meta-Llama-3.1-8B-Instruct
     - encoder_max_len: 1000 max4071, mean620
     - decoder_max_len: 200 max960, mean143의 중간	
