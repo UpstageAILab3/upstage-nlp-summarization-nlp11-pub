@@ -2,6 +2,8 @@
 /prediction
 /wandb
 /model
+/fine_tuned_model
+/outputs
 *.yaml
 
 # Byte-compiled / optimized / DLL files
