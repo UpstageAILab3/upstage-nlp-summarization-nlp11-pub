@@ -1,5 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/zHsKfIy0)
-# Title (Please modify the title)
+# Dialogue Summarization | 일상 대화 요약
+- Upstage AI Stages [https://stages.ai/en/competitions/312/overview/description](https://stages.ai/en/competitions/320/overview/description)
 ## Team
 
 | ![박패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![이패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![최패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![김패캠](https://avatars.githubusercontent.com/u/156163982?v=4) | ![오패캠](https://avatars.githubusercontent.com/u/156163982?v=4) |
@@ -12,6 +13,9 @@
 - AMD Ryzen Threadripper 3960X 24-Core Processor
 - NVIDIA GeForce RTX 3090
 - CUDA Version 12.2
+- OS: Ubuntu 20.04
+- Python
+- IDE: Jupyter Notebook, VSCode
 
 ### Requirements
 - _Write Requirements_
